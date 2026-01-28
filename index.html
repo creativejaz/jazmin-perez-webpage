@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jazmin Perez</title>
+    <!--FAVICON-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <link rel="stylesheet" href="common.css">
+
+    <!--FONT LINKS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Cursor + Animation Styles -->
+    <style>
+        #cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <p class="name">My digital space bulit in 2026. </p>
+            <!--BUTTONS ON TOP-->
+            <nav>
+                <ul>
+                    <li><a href="#hero">Welcome</a></li>
+                    <li><a href="#about">Why Design</a></li>
+                    <li><a href="#projects">Design Creations</a></li>
+                    <li><a href="#other">Coming soon</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!--HERO SECTION-->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>jazmin perez</h1>
+                <p>designer | artist | creative | image-maker | wanderer</p>
+            </div>
+        </section>
+        <!--ABOUT SECTION-->
+        <section id="about">
+            <div class="row">
+                <h2>I create identities and images that touch
+                    the mind as well as the heart.</h2>
+            </div>
+        </section>
+
+        <!--PROJECT SECTION-->
+        <section id="projects">
+            <div class="wrapper">
+                <h2>Design Creations</h2>
+                <div class="cards">
+                    <div class="card">
+                        <a data-fslightbox="projects" href="assets/galapoasis-collateral-cover.jpg">
+                            <img class="landscape-img" src="assets/galapoasis-collateral-cover.jpg"
+                                alt="GalapOasis business cards">
+                        </a>
+                        <div class="card-text">
+                            <h4>GalapOasis</h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a data-fslightbox="projects" href="assets/pazzo-collateral-cover.png">
+                            <img src="assets/pazzo-collateral-cover.png" alt="Pazzo Pastaria wine menu">
+                        </a>
+                        <div class="card-text">
+                            <h4>Pazzo Pastaria</h4>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a data-fslightbox="projects" href="assets/gala-signage-cover.png">
+                            <img src="assets/gala-signage-cover.png" alt="Miraflores Gala signage">
+                        </a>
+                        <div class="card-text">
+                            <h4>Miraflores Gala</h4>
+                        </div>
+                        <div class="cards">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a data-fslightbox="projects" href="assets/type-rhythmic-poster.jpg">
+                            <img src="assets/jazz-type-poster-cover.png" alt="Kawasaki Jazz Festival Poster">
+                        </a>
+                        <div class="card-text">
+                            <h4>Jazz Festival Poster</h4>
+                        </div>
+                        <div class="cards">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--FOOTER-->
+    <footer>
+        <div class="wrapper">
+            <p class="sign-off">thanks for wandering on my page. ☺</p>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Welcome</a></li>
+                    <li><a href="#about">Why Design</a></li>
+                    <li><a href="#projects">Design Creations</a></li>
+                    <li><a href="https://www.linkedin.com/in/jazmin-perez-97b2771b0/" target="_blank">LinkedIn</a>
+                </ul>
+            </nav>
+            <div class="copywrite">
+                <p>&copy;2026 Jazmin Perez</p>
+            </div>
+        </div>
+    </footer>
+    <!--SCRIPT-->
+    <script src="fslightbox.js"></script>
+    <script>
+        const hero = document.querySelector('.hero-content');
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        hero.classList.add('animate');
+                        observer.unobserve(hero);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        observer.observe(hero);
+    </script>
+    <div id="cursor"></div>
+    <script>
+        document.addEventListener('mousemove', function (e) {
+            var cursor = document.getElementById('cursor');
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        });
+    </script>
+</body>
